@@ -4,6 +4,7 @@ const fs = require('fs');
 const handleWebhookGet = (req, res) => {
   const hubVerifyToken = req.query['hub.verify_token'];
   if (hubVerifyToken === 'HolaNovato') {
+    console.log('Autenticación correcta.' , req.query['hub.challenge'])
     res.send(req.query['hub.challenge']);
   } else {
     res.status(403).send('Error de autenticación.');
