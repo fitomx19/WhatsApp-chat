@@ -22,7 +22,7 @@ const handleWebhookPost = async (req, res) => {
   const idWA = data.entry[0].changes[0].value.messages[0].id;
   const timestamp = data.entry[0].changes[0].value.messages[0].timestamp;
 
-  if (data.mensaje) {
+  if (data) {
     try {
       const bot = new RiveScript();
       // Cargar el archivo y esperar a que cargue
