@@ -19,17 +19,29 @@ const handleWebhookGet = (req, res) => {
 
 const handleWebhookPost = async (req, res) => {
   const data = req.body;
-  console.log(data)
-  const telefonoCliente = data.entry[0].changes[0].value.messages[0].from;
-  const mensaje = data.entry[0].changes[0].value.messages[0].text.body;
-  const idWA = data.entry[0].changes[0].value.messages[0].id;
-  const timestamp = data.entry[0].changes[0].value.messages[0].timestamp;
+  console.log(data);
 
-  //DATA DE WHATSAPP CONTESTAR
-  const from = '187768911079645';
-  const token = 'EAAJbGNymOZCEBOxfoijEmLIrJZBo6kYWRdIPh4e5KxLse5TfKuuX6W7gELxdSZBxkSI3GG8vI3h0uz4UlTd84m5nfaa7EZCSlZBAuh3amvP7bYkjg8xkGOtFrZCrBsl3deQ7MNZCfvn7fq27EH8ZAjIDF6FRUJCv8eStxJV3Yb0pusMSFBvrxHzU94ZCOExowjq8UNgm5YTOhrKmR975EvewZD';
-  const to = telefonoCliente;
-  //const webhookVerifyToken = 'YOUR_WEBHOOK_VERIFICATION_TOKEN';
+  if (
+    data &&
+    data.entry &&
+    data.entry[0] &&
+    data.entry[0].changes &&
+    data.entry[0].changes[0] &&
+    data.entry[0].changes[0].value &&
+    data.entry[0].changes[0].value.messages &&
+    data.entry[0].changes[0].value.messages[0]
+  ) {
+    const telefonoCliente = data.entry[0].changes[0].value.messages[0].from;
+    const mensaje = data.entry[0].changes[0].value.messages[0].text.body;
+    const idWA = data.entry[0].changes[0].value.messages[0].id;
+    const timestamp = data.entry[0].changes[0].value.messages[0].timestamp;
+
+    
+    //DATA DE WHATSAPP CONTESTAR
+    const from = '187768911079645';
+    const token = 'EAAJbGNymOZCEBOxfoijEmLIrJZBo6kYWRdIPh4e5KxLse5TfKuuX6W7gELxdSZBxkSI3GG8vI3h0uz4UlTd84m5nfaa7EZCSlZBAuh3amvP7bYkjg8xkGOtFrZCrBsl3deQ7MNZCfvn7fq27EH8ZAjIDF6FRUJCv8eStxJV3Yb0pusMSFBvrxHzU94ZCOExowjq8UNgm5YTOhrKmR975EvewZD';
+    const to = telefonoCliente;
+    //const webhookVerifyToken = 'YOUR_WEBHOOK_VERIFICATION_TOKEN';
 
   if (data) {
     try {
@@ -63,7 +75,11 @@ const handleWebhookPost = async (req, res) => {
   } else {
     res.status(400).json({ status: 'error', message: 'No hay mensaje recibido.' });
   }
+  } else {
+    res.status(400).json({ status: 'error', message: 'Estructura de datos incorrecta.' });
+  }
 };
+
 
 
 
