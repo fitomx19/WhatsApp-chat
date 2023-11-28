@@ -24,15 +24,15 @@ const handleWebhookPost = (req, res) => {
 
     try{
       bot = new rivescript();
-      bot.loadDirectory("restaurante.rive");
-      bot.sortReplies();
-  
-      respuesta = bot.reply("localuser", mensaje);
-      respuesta = respuesta.replace(/\n/g, " ");
-      respuesta = respuesta.replace(/\r/g, " ");
+      bot.loadFile("restaurante.rive").then(loading_done).catch(loading_error);
 
-    
-      fs.writeFileSync('texto.txt', "respuesta: " ,respuesta + "timestamp: " + timestamp  +  "\n");
+      bot.sortReplies();
+      username = "local-user";
+
+      bot.reply(username, "Hello, bot!").then(function(reply) {
+        console.log("The bot says: " + reply);
+        fs.writeFileSync('texto.txt', "respuesta: " + reply + "timestamp: " + timestamp + "\n");
+      });
     }catch(err){
       console.log(err);
     }
