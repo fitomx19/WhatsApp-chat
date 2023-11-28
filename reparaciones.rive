@@ -1,30 +1,30 @@
 + hola
 - ¡Hola! Bienvenido a nuestro servicio de reparación y venta de smartphones. ¿En qué puedo ayudarte?
 
-^ Nuestros servicios
-^ Reparación de smartphones
-^ Venta de telefonos
-^ Accesorios disponibles
-^ Información de contacto
-^ Horarios de atención
+^ * Nuestros servicios\n
+^ * Reparación de smartphones\n
+^ * Venta de telefonos\n
+^ * Accesorios disponibles\n
+^ * Información de contacto\n
+^ * Horarios de atención\n
 
-! var reparacion = Reparación de smartphones y accesorios\n 
-^ Cambio de pantalla desde 30.00\n 
+! var reparacion = Reparación de smartphones y accesorios
+^ Cambio de pantalla desde 30.00
 ^ Reparación de batería 20.00\n
 
-! var venta = Venta de telefonos \n
+! var venta = Venta de telefonos
 ^ iPhone 11 499.99\n
 ^ iPhone 12 699.99\n
 ^ iPhone 13 799.99\n
 ^ iPhone 14 899.99\n
 
-! var accesorios = Accesorios disponibles \n
+! var accesorios = Accesorios disponibles
 ^ Fundas desde 10.00\n
 ^ Micas protectoras 5.00\n
 ^ Audífonos inalámbricos 29.99\n
 ^ Cable usb c 4.99\n
 
-! var contacto = Reparación express \n
+! var contacto = Reparación express
 ^ Reparación en menos de una hora\n
 ^ Consulta gratuita\n
 
