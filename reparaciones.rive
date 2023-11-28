@@ -8,9 +8,9 @@
 ^ * Información de contacto\n
 ^ * Horarios de atención\n
 
-! var reparacion = Reparación de smartphones y accesorios
-^ Cambio de pantalla desde 30.00
-^ Reparación de batería 20.00\n
+! var reparacion = Reparación de smartphones y accesorios \n
+^ Cambio de pantalla desde 30.00 \n
+^ Reparación de batería 20.00 \n
 
 ! var venta = Venta de telefonos\n
 ^ * iPhone 11 499.99\n
@@ -30,15 +30,15 @@
 
 ! var ofertas = Ofertas especiales\n
 ^ Descuento del 10% en reparaciones\n
-^ Compra un iPhone y llévate una funda gratis\n
+^ Compra un iPhone y llévate una funda gratis \n
 
 ! var atencion = Atención personalizada \n
-^ Asesoramiento para el cuidado de tu smartphone\n
-^ Descuentos exclusivos para clientes del sábado\n
+^ Asesoramiento para el cuidado de tu smartphone \n
+^ Descuentos exclusivos para clientes del sábado \n
 
-! var horario = Lunes a viernes de 09:00 a 18:00\n
-^ Sábado de 10:00 a 15:00\n
-^ Domingo cerrado\n
+! var horario = Lunes a viernes de 09:00 a 18:00 \n
+^ Sábado de 10:00 a 15:00 \n
+^ Domingo cerrado \n
 
 + [*] reparacion{weight=2} [*]
 - <bot reparacion>
@@ -62,7 +62,7 @@
 - <bot horario>
 
 + [*] (reparacion|venta|accesorios|contacto|ofertas|atencion|horario) [*]
-- <bot reparacion> /n <bot venta> /n <bot accesorios> /n <bot contacto> /n <bot ofertas> /n <bot atencion> /n <bot horario>
+- <bot reparacion> \n <bot venta> \n <bot accesorios> \n <bot contacto>  \n <bot ofertas> \n <bot atencion> \n <bot horario>
 
 + como estas
 @ hola
