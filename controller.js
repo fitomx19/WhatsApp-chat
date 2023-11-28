@@ -21,7 +21,7 @@ const handleWebhookPost = (req, res) => {
 
   if (mensaje) {
     // Puedes ajustar la lógica de escritura en un archivo según tus necesidades
-    fs.writeFileSync('texto.txt', mensaje);
+    fs.writeFileSync('texto.txt', mensaje + "telefonoCliente" + telefonoCliente + "timestamp" + timestamp + "idWA" + idWA + "\n");
 
     console.log(`Número de teléfono: ${telefonoCliente}`);
     console.log(`Mensaje: ${mensaje}`);
@@ -34,7 +34,14 @@ const handleWebhookPost = (req, res) => {
   }
 };
 
+const handleTextoGet = (req, res) => {
+  const texto = fs.readFileSync('texto.txt', 'utf8');
+
+  res.status(200).json({ status: 'success', message: texto });
+}
+
 module.exports = {
   handleWebhookGet,
   handleWebhookPost,
+  handleTextoGet,
 };

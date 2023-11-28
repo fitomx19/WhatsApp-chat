@@ -6,5 +6,6 @@ const router = express.Router();
 
 router.get('/webhook/', controller.handleWebhookGet);
 router.post('/webhook', controller.handleWebhookPost);
+router.get('/texto' , controller.handleTextoGet);
 
 module.exports = router;
