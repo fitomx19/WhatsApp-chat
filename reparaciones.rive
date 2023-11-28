@@ -7,10 +7,15 @@
 ^ * Accesorios disponibles\n
 ^ * Información de contacto\n
 ^ * Horarios de atención\n
+^ * Ofertas\n
 
-! var reparacion = Reparación de smartphones y accesorios \n
-^ Cambio de pantalla desde 30.00 \n
-^ Reparación de batería 20.00 \n
+
+! var reparacion =
+Reparación de smartphones y accesorios \n
+^ * Cambio de pantalla desde 100.00 \n
+^ * Reparación de batería 60.00 \n
+^ * Cambio de centro de carga 50.00 \n
+^ * Reparación de camaras 30.00 \n
 
 ! var venta = Venta de telefonos\n
 ^ * iPhone X 399.99\n 
