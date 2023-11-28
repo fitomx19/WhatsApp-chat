@@ -1,7 +1,7 @@
 const RiveScript = require ('rivescript');
-
+const mongoose = require('mongoose');
 const fs = require('fs');
-
+const Mensaje = require('.mensajeModel.js');
  
 
 const handleWebhookGet = (req, res) => {
@@ -22,6 +22,7 @@ const handleWebhookPost = async (req, res) => {
   const idWA = data.entry[0].changes[0].value.messages[0].id;
   const timestamp = data.entry[0].changes[0].value.messages[0].timestamp;
 
+  
   if (data) {
     try {
       const bot = new RiveScript();
@@ -32,11 +33,18 @@ const handleWebhookPost = async (req, res) => {
 
       bot.sortReplies();
       const username = "local-user";
-
       const reply = await bot.reply(username, mensaje);
+      
+      const nuevoMensaje = new Mensaje({
+        id: idWA,
+        mensaje_recibido: mensaje,
+        mensaje_enviado: reply,
+        id_wa: idWA,
+        telefono_wa: telefonoCliente,
+        hora_whatsapp: timestamp
+      });
 
-      console.log("The bot says: " + reply);
-      fs.writeFileSync('texto.txt', "respuesta: " + reply + "timestamp: " + timestamp + "\n");
+      await nuevoMensaje.save();
 
       res.status(200).json({ status: 'success' });
     } catch (err) {
@@ -62,3 +70,16 @@ module.exports = {
   handleWebhookPost,
   handleTextoGet,
 };
+
+
+
+
+/*
+id
+timestamp
+mensaje_recibido
+mensaje_enviado
+id_wa
+timestamp_wa
+telefono_wa
+*/
