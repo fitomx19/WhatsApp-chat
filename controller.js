@@ -2,6 +2,8 @@ const RiveScript = require ('rivescript');
 
 const fs = require('fs');
 
+ 
+
 const handleWebhookGet = (req, res) => {
   const hubVerifyToken = req.query['hub.verify_token'];
   if (hubVerifyToken === 'HolaNovato') {
