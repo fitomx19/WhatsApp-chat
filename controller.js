@@ -2,7 +2,9 @@ const RiveScript = require ('rivescript');
 const mongoose = require('mongoose');
 const fs = require('fs');
 const Mensaje = require('.mensajeModel.js');
- 
+const { createBot } = require('whatsapp-cloud-api');
+
+
 
 const handleWebhookGet = (req, res) => {
   const hubVerifyToken = req.query['hub.verify_token'];
@@ -22,10 +24,16 @@ const handleWebhookPost = async (req, res) => {
   const idWA = data.entry[0].changes[0].value.messages[0].id;
   const timestamp = data.entry[0].changes[0].value.messages[0].timestamp;
 
-  
+  //DATA DE WHATSAPP CONTESTAR
+  const from = '187768911079645';
+  const token = 'EAAJbGNymOZCEBOxfoijEmLIrJZBo6kYWRdIPh4e5KxLse5TfKuuX6W7gELxdSZBxkSI3GG8vI3h0uz4UlTd84m5nfaa7EZCSlZBAuh3amvP7bYkjg8xkGOtFrZCrBsl3deQ7MNZCfvn7fq27EH8ZAjIDF6FRUJCv8eStxJV3Yb0pusMSFBvrxHzU94ZCOExowjq8UNgm5YTOhrKmR975EvewZD';
+  const to = telefonoCliente;
+  //const webhookVerifyToken = 'YOUR_WEBHOOK_VERIFICATION_TOKEN';
+
   if (data) {
     try {
       const bot = new RiveScript();
+      const contestar = createBot(from, token);
       // Cargar el archivo y esperar a que cargue
       await new Promise((resolve, reject) => {
         bot.loadFile("restaurante.rive", resolve, reject);
@@ -46,6 +54,7 @@ const handleWebhookPost = async (req, res) => {
 
       await nuevoMensaje.save();
 
+      const result = await contestar.sendText(to, 'Hello world');
       res.status(200).json({ status: 'success' });
     } catch (err) {
       console.log(err);
