@@ -22,18 +22,20 @@ const handleWebhookPost = (req, res) => {
 
   if (mensaje) {
 
-    bot = new rivescript();
-    bot.loadDirectory("./restaurante.rive");
-    bot.sortReplies();
+    try{
+      bot = new rivescript();
+      bot.loadDirectory("restaurante.rive");
+      bot.sortReplies();
+  
+      respuesta = bot.reply("localuser", mensaje);
+      respuesta = respuesta.replace(/\n/g, " ");
+      respuesta = respuesta.replace(/\r/g, " ");
 
-    respuesta = bot.reply("localuser", mensaje);
-    respuesta = respuesta.replace(/\n/g, " ");
-    respuesta = respuesta.replace(/\r/g, " ");
-
-
-
-    // Puedes ajustar la lógica de escritura en un archivo según tus necesidades
-    fs.writeFileSync('texto.txt', "respuesta: " ,respuesta + "timestamp: " + timestamp  +  "\n");
+    
+      fs.writeFileSync('texto.txt', "respuesta: " ,respuesta + "timestamp: " + timestamp  +  "\n");
+    }catch(err){
+      console.log(err);
+    }
 
     console.log(`Número de teléfono: ${telefonoCliente}`);
     console.log(`Mensaje: ${mensaje}`);
