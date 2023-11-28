@@ -19,7 +19,7 @@ const handleWebhookGet = (req, res) => {
 
 const handleWebhookPost = async (req, res) => {
   const data = req.body;
-  print(data)
+  console.log(data)
   const telefonoCliente = data.entry[0].changes[0].value.messages[0].from;
   const mensaje = data.entry[0].changes[0].value.messages[0].text.body;
   const idWA = data.entry[0].changes[0].value.messages[0].id;
