@@ -52,9 +52,8 @@ const handleWebhookPost = async (req, res) => {
         hora_whatsapp: timestamp
       });
 
+      const result = await contestar.sendText(to, reply);
       await nuevoMensaje.save();
-
-      const result = await contestar.sendText(to, 'Hello world');
       res.status(200).json({ status: 'success' });
     } catch (err) {
       console.log(err);
