@@ -23,7 +23,7 @@ const handleWebhookPost = (req, res) => {
   if (mensaje) {
 
     bot = new rivescript();
-    bot.loadDirectory("restaurante.rive");
+    bot.loadDirectory("./restaurante.rive");
     bot.sortReplies();
 
     respuesta = bot.reply("localuser", mensaje);
