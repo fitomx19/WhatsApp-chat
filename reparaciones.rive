@@ -1,0 +1,89 @@
++ hola
+- ¡Hola! Bienvenido a nuestro servicio de reparación y venta de smartphones. ¿En qué puedo ayudarte?
+
+^ Nuestros servicios
+^ Reparación de smartphones
+^ Venta de telefonos
+^ Accesorios disponibles
+^ Información de contacto
+^ Horarios de atención
+
+! var reparacion = Reparación de smartphones y accesorios\n 
+^ Cambio de pantalla desde 30.00\n 
+^ Reparación de batería 20.00\n
+
+! var venta = Venta de telefonos \n
+^ iPhone 11 499.99\n
+^ iPhone 12 699.99\n
+^ iPhone 13 799.99\n
+^ iPhone 14 899.99\n
+
+! var accesorios = Accesorios disponibles \n
+^ Fundas desde 10.00\n
+^ Micas protectoras 5.00\n
+^ Audífonos inalámbricos 29.99\n
+^ Cable usb c 4.99\n
+
+! var contacto = Reparación express \n
+^ Reparación en menos de una hora\n
+^ Consulta gratuita\n
+
+! var ofertas = Ofertas especiales \n
+^ Descuento del 10% en reparaciones\n
+^ Compra un iPhone y llévate una funda gratis\n
+
+! var atencion = Atención personalizada \n
+^ Asesoramiento para el cuidado de tu smartphone\n
+^ Descuentos exclusivos para clientes del sábado\n
+
+! var horario = Lunes a viernes de 09:00 a 18:00\n
+^ Sábado de 10:00 a 15:00\n
+^ Domingo cerrado\n
+
++ [*] reparacion{weight=2} [*]
+- <bot reparacion>
+
++ [*] venta{weight=2} [*]
+- <bot venta>
+
++ [*] accesorios{weight=2} [*]
+- <bot accesorios>
+
++ [*] contacto{weight=2} [*]
+- <bot contacto>
+
++ [*] ofertas{weight=2} [*]
+- <bot ofertas>
+
++ [*] atencion{weight=2} [*]
+- <bot atencion>
+
++ [*] horario{weight=2} [*]
+- <bot horario>
+
++ [*] (reparacion|venta|accesorios|contacto|ofertas|atencion|horario) [*]
+- <bot reparacion> \n <bot venta> \n <bot accesorios> \n <bot contacto> \n <bot ofertas> \n <bot atencion> \n <bot horario>
+
++ como estas
+@ hola
+
++ hay alguien*
+@ hola
+
++ [*] (telefono|celular|cel) [*]
+- Nuestro número de contacto es 725648221
+
++ [*] (direccion|ubicacion|lugar) [*]
+- Nos encontramos en la Colonia Emiliano Zapata Acapulco Gro. ¡Te esperamos!
+
++ [*] (entregas|a domicilio) [*]
+- Realizamos entregas a domicilio de lunes a viernes de 12:00 a 15:00.
+
++ [*] (pagina web|web|pagina) [*]
+- Para más información, visita nuestro sitio web en https://www.reparacionmovil.com
+
++ [*] (hora|horarios|dias|abierto){weight=3} [*]
+- <bot horario>
+
++ *
+- Soy un robot, ¿puedo ayudarte con algo más relacionado con reparación de smartphones y accesorios?

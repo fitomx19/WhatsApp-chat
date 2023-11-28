@@ -49,7 +49,7 @@ const handleWebhookPost = async (req, res) => {
       const contestar = createBot(from, token);
       // Cargar el archivo y esperar a que cargue
       await new Promise((resolve, reject) => {
-        bot.loadFile("restaurante.rive", resolve, reject);
+        bot.loadFile("reparaciones.rive", resolve, reject);
       });
 
       bot.sortReplies();
