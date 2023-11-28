@@ -13,32 +13,36 @@
 ^ Reparación de batería 20.00 \n
 
 ! var venta = Venta de telefonos\n
-^ * iPhone 11 499.99\n
-^ * iPhone 12 699.99\n
-^ * iPhone 13 799.99\n
-^ * iPhone 14 899.99\n
+^ * iPhone X 399.99\n 
+^ * iPhone 11 499.99\n 
+^ * iPhone 12 699.99\n 
+^ * iPhone 13 799.99\n 
+^ * iPhone 14 899.99\n 
+^ * iPhone 15 pro max999.99\n 
 
 ! var accesorios = Accesorios disponibles\n
-^ Fundas desde 10.00\n
-^ Micas protectoras 5.00\n
-^ Audífonos inalámbricos 29.99\n
-^ Cable usb c 4.99\n
+^ * Fundas desde 10.00\n
+^ * Micas protectoras 5.00\n
+^ * Audífonos inalámbricos 29.99\n
+^ * Cable usb c 4.99\n
+^ * Cargador usb c 6.99\n 
 
 ! var contacto = Reparación express\n
-^ Reparación en menos de una hora\n
-^ Consulta gratuita\n
+^ * Reparación en menos de una hora\n
+^ * Consulta gratuita\n
 
 ! var ofertas = Ofertas especiales\n
-^ Descuento del 10% en reparaciones\n
-^ Compra un iPhone y llévate una funda gratis \n
+^ * Descuento del 10% en reparaciones\n
+^ * Compra un iPhone y llévate una funda gratis \n
 
 ! var atencion = Atención personalizada \n
-^ Asesoramiento para el cuidado de tu smartphone \n
-^ Descuentos exclusivos para clientes del sábado \n
+^ * Asesoramiento para el cuidado de tu smartphone \n
+^ * Descuentos exclusivos para clientes del sábado \n
 
-! var horario = Lunes a viernes de 09:00 a 18:00 \n
-^ Sábado de 10:00 a 15:00 \n
-^ Domingo cerrado \n
+! var horario = Nuestro horario es de:\n
+^ * Lunes a viernes de 09:00 a 20:00 \n
+^ * Sábado de 10:00 a 15:00 \n
+^ * Domingo cerrado \n
 
 + [*] reparacion{weight=2} [*]
 - <bot reparacion>
@@ -61,7 +65,7 @@
 + [*] horario{weight=2} [*]
 - <bot horario>
 
-+ [*] (reparacion|venta|accesorios|contacto|ofertas|atencion|horario) [*]
++ [*] (reparacion|venta|accesorios|contacto|ofertas|atencion|horario|menu) [*]
 - <bot reparacion> \n <bot venta> \n <bot accesorios> \n <bot contacto>  \n <bot ofertas> \n <bot atencion> \n <bot horario>
 
 + como estas
@@ -71,13 +75,16 @@
 @ hola
 
 + [*] (telefono|celular|cel) [*]
-- Nuestro número de contacto es 725648221
+- * Nuestro número area de ventas es 848465657
+- * Nuestro número area de repaciones es 725648221
+- * Nuestro número area de garantias es 764534253
+- * Nuestro número area de consulta es 93836456
 
 + [*] (direccion|ubicacion|lugar) [*]
-- Nos encontramos en la Colonia Emiliano Zapata Acapulco Gro. ¡Te esperamos!
+- Nos encontramos en la Colonia Roma nte, Calle Nuevo león n.152. ¡Te esperamos!
 
 + [*] (entregas|a domicilio) [*]
-- Realizamos entregas a domicilio de lunes a viernes de 12:00 a 15:00.
+- Realizamos entregas y reparaciones a domicilio de lunes a viernes de 12:00 a 15:00.
 
 + [*] (pagina web|web|pagina) [*]
 - Para más información, visita nuestro sitio web en https://www.reparacionmovil.com
@@ -86,4 +93,6 @@
 - <bot horario>
 
 + *
-- Soy un robot, ¿puedo ayudarte con algo más relacionado con reparación de smartphones y accesorios?
+- Soy un asistente virtual, ¿puedo ayudarte con algo más relacionado con reparación de smartphones y accesorios?
+- Puedes preguntarlo de otra manera
+- Escribelo de otra forma
