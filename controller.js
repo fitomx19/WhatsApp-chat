@@ -1,4 +1,4 @@
-let rivescript = require('rivescript');
+const RiveScript = require ('rivescript');
 
 const fs = require('fs');
 
@@ -23,7 +23,7 @@ const handleWebhookPost = (req, res) => {
   if (mensaje) {
 
     try{
-      bot = new rivescript();
+      var bot = new RiveScript();
       bot.loadFile("restaurante.rive").then(loading_done).catch(loading_error);
 
       bot.sortReplies();
