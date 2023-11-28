@@ -1,7 +1,7 @@
 const RiveScript = require ('rivescript');
 const mongoose = require('mongoose');
 const fs = require('fs');
-const Mensaje = require('.mensajeModel.js');
+const Mensaje = require('./mensajeModel.js');
 const { createBot } = require('whatsapp-cloud-api');
 
 
