@@ -10,8 +10,7 @@
 ^ * Ofertas\n
 
 
-! var reparacion =
-Reparación de smartphones y accesorios \n
+! var reparacion = Reparación de smartphones y accesorios \n
 ^ * Cambio de pantalla desde 100.00 \n
 ^ * Reparación de batería 60.00 \n
 ^ * Cambio de centro de carga 50.00 \n
