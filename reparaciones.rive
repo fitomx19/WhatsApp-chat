@@ -12,23 +12,23 @@
 ^ Cambio de pantalla desde 30.00
 ^ Reparación de batería 20.00\n
 
-! var venta = Venta de telefonos
-^ iPhone 11 499.99\n
-^ iPhone 12 699.99\n
-^ iPhone 13 799.99\n
-^ iPhone 14 899.99\n
+! var venta = Venta de telefonos\n
+^ * iPhone 11 499.99\n
+^ * iPhone 12 699.99\n
+^ * iPhone 13 799.99\n
+^ * iPhone 14 899.99\n
 
-! var accesorios = Accesorios disponibles
+! var accesorios = Accesorios disponibles\n
 ^ Fundas desde 10.00\n
 ^ Micas protectoras 5.00\n
 ^ Audífonos inalámbricos 29.99\n
 ^ Cable usb c 4.99\n
 
-! var contacto = Reparación express
+! var contacto = Reparación express\n
 ^ Reparación en menos de una hora\n
 ^ Consulta gratuita\n
 
-! var ofertas = Ofertas especiales \n
+! var ofertas = Ofertas especiales\n
 ^ Descuento del 10% en reparaciones\n
 ^ Compra un iPhone y llévate una funda gratis\n
 
