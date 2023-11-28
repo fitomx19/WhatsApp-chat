@@ -62,7 +62,7 @@
 - <bot horario>
 
 + [*] (reparacion|venta|accesorios|contacto|ofertas|atencion|horario) [*]
-- <bot reparacion> \n <bot venta> \n <bot accesorios> \n <bot contacto> \n <bot ofertas> \n <bot atencion> \n <bot horario>
+- <bot reparacion> /n <bot venta> /n <bot accesorios> /n <bot contacto> /n <bot ofertas> /n <bot atencion> /n <bot horario>
 
 + como estas
 @ hola
